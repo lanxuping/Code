@@ -30,9 +30,11 @@ NSString * ApplicationActionRemoveWebImageCache = @"ApplicationActionRemoveWebIm
 }
 - (instancetype)init {
     if (self = [super init]) {
-        self.queue.maxConcurrentOperationCount = 3;
+        //最大并发数
+        self.queue.maxConcurrentOperationCount = 6;
         //注册内存警告
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(memoryWarning) name:UIApplicationDidReceiveMemoryWarningNotification object:nil];
+        //注册手动释放内存
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(memoryWarning) name:ApplicationActionRemoveWebImageCache object:nil];
         
     }
@@ -58,7 +60,7 @@ NSString * ApplicationActionRemoveWebImageCache = @"ApplicationActionRemoveWebIm
     
     if (self.operationDict[urlString]) {
         NSLog(@"稍等,%@正在下载中",tag);
-
+        //解决有多个素材需要下载的时候，由于不会重复下载导致的只回调一个的问题
         NSMutableArray *arr = self.completeHandleDict[urlString];
         if (!arr) {
             arr = [NSMutableArray array];
@@ -67,8 +69,6 @@ NSString * ApplicationActionRemoveWebImageCache = @"ApplicationActionRemoveWebIm
         [self.completeHandleDict setObject:arr forKey:urlString];
         return;
     }
-    
-    
     
     WebImageDownloadNSOperation *op = [[WebImageDownloadNSOperation alloc] initWithDownloadImageUrl:urlString complete:^(NSData *data, NSString *string) {
         if (data) {
@@ -93,10 +93,10 @@ NSString * ApplicationActionRemoveWebImageCache = @"ApplicationActionRemoveWebIm
 }
 //下载取消操作
 - (void)cancelDownloadImageViewWithUrlString:(NSString *)urlString {
-    [self.operationDict removeObjectForKey:urlString];
     [self.completeHandleDict removeObjectForKey:urlString];
     WebImageDownloadNSOperation *op = self.operationDict[urlString];
     [op cancel];
+    [self.operationDict removeObjectForKey:urlString];
 }
 - (NSOperationQueue *)queue {
     if (!_queue) {

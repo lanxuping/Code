@@ -8,6 +8,16 @@
 
 #import "WebImageDownloadNSOperation.h"
 #import "NSString+FilePath.h"
+/**
+ 同步的operation条件：
+ 1.重载main方法，这个方法里面放主业务逻辑。也需要查看cancel属性
+ 2.如果我们重载了getter和setter，必须确保调用是线程安全的。
+ 异步operation条件：
+ 1.重载start方法，和asynchronous，exciting，finished属性
+ start方法中我们必须确保operation异步执行，在此方法中我们需要改变executing更新状态，发送executing KVO通知。当结束operation。必须更新isExecuting和isFinished状态，并触发kvo通知。当cancel一个operation时候，我们也要更新isFinished状态，即使此时operation还未执行。在queue 中的operation必须进入cancel状态后才可以被从operation中移除，
+ 注意：start里面不能调用[super start];在自定义异步operation中，我们完全自定义start，已经全部模拟了父类默认的start行为（start task && send KVO），在start方法里面，我们还要查看isCanceled属性，确保start task前，task是不是已经被取消。如果我们自定义了dependency，我们还需要发送isReady的KVO通知。
+ */
+
 
 @interface WebImageDownloadNSOperation ()
 @property (nonatomic, readwrite, getter=isExecuting) BOOL executing;

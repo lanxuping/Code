@@ -108,11 +108,11 @@
 		7128C66922A611BF00E66240 /* Code */ = {
 			isa = PBXGroup;
 			children = (
+				7128C68F22A612BA00E66240 /* NSOperation */,
 				7128C6A522A66C8C00E66240 /* WebImage+CustomNSOperation */,
 				7128C66E22A611BF00E66240 /* MainController.m */,
 				7128C66D22A611BF00E66240 /* MainController.h */,
 				7128C67822A611C100E66240 /* Info.plist */,
-				7128C68F22A612BA00E66240 /* NSOperation */,
 				7128C68E22A611CF00E66240 /* New Group */,
 			);
 			path = Code;

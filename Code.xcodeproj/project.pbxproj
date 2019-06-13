@@ -24,6 +24,10 @@
 		7128C6A422A66C7B00E66240 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 7128C6A322A66C7B00E66240 /* UIImageView+WebCache.m */; };
 		7128C6A822A66D1900E66240 /* WebImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7128C6A722A66D1900E66240 /* WebImageManager.m */; };
 		7128C6AB22A7629A00E66240 /* WebImageDownloadNSOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7128C6AA22A7629A00E66240 /* WebImageDownloadNSOperation.m */; };
+		71627EF422AE439D00FE6BA6 /* RuntimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71627EF322AE439D00FE6BA6 /* RuntimeViewController.m */; };
+		71627F0922B227E200FE6BA6 /* NetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71627F0722B227E200FE6BA6 /* NetViewController.m */; };
+		71627F0A22B227E200FE6BA6 /* NetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71627F0822B227E200FE6BA6 /* NetViewController.xib */; };
+		71627F0D22B22C4F00FE6BA6 /* DownloadNetWork.m in Sources */ = {isa = PBXBuildFile; fileRef = 71627F0C22B22C4F00FE6BA6 /* DownloadNetWork.m */; };
 		A5E77DAC73229554825846E8 /* libPods-CodeTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B11A1C89FFAE4AEAD0E65064 /* libPods-CodeTests.a */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +75,13 @@
 		7128C6A722A66D1900E66240 /* WebImageManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebImageManager.m; sourceTree = "<group>"; };
 		7128C6A922A7629A00E66240 /* WebImageDownloadNSOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebImageDownloadNSOperation.h; sourceTree = "<group>"; };
 		7128C6AA22A7629A00E66240 /* WebImageDownloadNSOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebImageDownloadNSOperation.m; sourceTree = "<group>"; };
+		71627EF222AE439D00FE6BA6 /* RuntimeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RuntimeViewController.h; sourceTree = "<group>"; };
+		71627EF322AE439D00FE6BA6 /* RuntimeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RuntimeViewController.m; sourceTree = "<group>"; };
+		71627F0622B227E200FE6BA6 /* NetViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetViewController.h; sourceTree = "<group>"; };
+		71627F0722B227E200FE6BA6 /* NetViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetViewController.m; sourceTree = "<group>"; };
+		71627F0822B227E200FE6BA6 /* NetViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NetViewController.xib; sourceTree = "<group>"; };
+		71627F0B22B22C4F00FE6BA6 /* DownloadNetWork.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DownloadNetWork.h; sourceTree = "<group>"; };
+		71627F0C22B22C4F00FE6BA6 /* DownloadNetWork.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DownloadNetWork.m; sourceTree = "<group>"; };
 		787BADE248837E37FBDEDFC3 /* Pods-Code.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Code.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Code/Pods-Code.debug.xcconfig"; sourceTree = "<group>"; };
 		A8A10A4B4BB6C6DD30CD46E7 /* Pods-CodeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CodeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CodeTests/Pods-CodeTests.release.xcconfig"; sourceTree = "<group>"; };
 		B11A1C89FFAE4AEAD0E65064 /* libPods-CodeTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CodeTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -122,6 +133,8 @@
 			children = (
 				7128C68F22A612BA00E66240 /* NSOperation */,
 				7128C6A522A66C8C00E66240 /* WebImage+CustomNSOperation */,
+				71627EF522AF84A600FE6BA6 /* NetDownload(断点下载) */,
+				71627EF122AE437100FE6BA6 /* RuntimeTest */,
 				7128C66E22A611BF00E66240 /* MainController.m */,
 				7128C66D22A611BF00E66240 /* MainController.h */,
 				7128C67822A611C100E66240 /* Info.plist */,
@@ -182,6 +195,27 @@
 				7128C6AA22A7629A00E66240 /* WebImageDownloadNSOperation.m */,
 			);
 			path = "WebImage+CustomNSOperation";
+			sourceTree = "<group>";
+		};
+		71627EF122AE437100FE6BA6 /* RuntimeTest */ = {
+			isa = PBXGroup;
+			children = (
+				71627EF222AE439D00FE6BA6 /* RuntimeViewController.h */,
+				71627EF322AE439D00FE6BA6 /* RuntimeViewController.m */,
+			);
+			path = RuntimeTest;
+			sourceTree = "<group>";
+		};
+		71627EF522AF84A600FE6BA6 /* NetDownload(断点下载) */ = {
+			isa = PBXGroup;
+			children = (
+				71627F0622B227E200FE6BA6 /* NetViewController.h */,
+				71627F0722B227E200FE6BA6 /* NetViewController.m */,
+				71627F0822B227E200FE6BA6 /* NetViewController.xib */,
+				71627F0B22B22C4F00FE6BA6 /* DownloadNetWork.h */,
+				71627F0C22B22C4F00FE6BA6 /* DownloadNetWork.m */,
+			);
+			path = "NetDownload(断点下载)";
 			sourceTree = "<group>";
 		};
 		7960EF5F575AC0BC3A29D83C /* Frameworks */ = {
@@ -286,6 +320,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71627F0A22B227E200FE6BA6 /* NetViewController.xib in Resources */,
 				7128C67722A611C100E66240 /* LaunchScreen.storyboard in Resources */,
 				7128C67422A611C100E66240 /* Assets.xcassets in Resources */,
 				7128C67222A611BF00E66240 /* Main.storyboard in Resources */,
@@ -353,6 +388,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71627F0922B227E200FE6BA6 /* NetViewController.m in Sources */,
 				7128C69822A6166F00E66240 /* ViewModel.m in Sources */,
 				7128C6A822A66D1900E66240 /* WebImageManager.m in Sources */,
 				7128C69222A6146800E66240 /* CollectionViewController.m in Sources */,
@@ -360,7 +396,9 @@
 				7128C6A422A66C7B00E66240 /* UIImageView+WebCache.m in Sources */,
 				7128C66F22A611BF00E66240 /* MainController.m in Sources */,
 				7128C67A22A611C100E66240 /* main.m in Sources */,
+				71627EF422AE439D00FE6BA6 /* RuntimeViewController.m in Sources */,
 				7128C6AB22A7629A00E66240 /* WebImageDownloadNSOperation.m in Sources */,
+				71627F0D22B22C4F00FE6BA6 /* DownloadNetWork.m in Sources */,
 				7128C66C22A611BF00E66240 /* AppDelegate.m in Sources */,
 				7128C69B22A6180300E66240 /* CollectionViewCell.m in Sources */,
 				7128C69E22A65E0F00E66240 /* NSString+FilePath.m in Sources */,

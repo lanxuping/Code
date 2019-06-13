@@ -27,7 +27,10 @@
     return _tableView;
 }
 - (void)getData {
-    _data = @[@"CollectionViewController",@"WebImageCollectionViewController"];
+    _data = @[@"CollectionViewController",
+              @"WebImageCollectionViewController",
+              @"RuntimeViewController",
+              @"NetViewController"];
 }
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
